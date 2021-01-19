@@ -96,13 +96,13 @@ class Report(object):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='URC nCov auto report script.')
+    parser = argparse.ArgumentParser(description='USTC nCov auto report script.')
     parser.add_argument('data_path', help='path to your own data used for post method', type=str)
     parser.add_argument('stuid', help='your student number', type=str)
     parser.add_argument('password', help='your CAS password', type=str)
     args = parser.parse_args()
     autorepoter = Report(stuid=args.stuid, password=args.password, data_path=args.data_path)
-    count = 1
+    count = 5
     while count != 0:
         ret = autorepoter.report()
         if ret != False:
